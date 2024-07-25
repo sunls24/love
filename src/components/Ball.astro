@@ -1,0 +1,19 @@
+<div id="ball" class="mx-auto my-10 h-16 w-16 rounded-full bg-yellow-300"></div>
+
+<script>
+  const ball = document.querySelector("#ball")
+
+  import anime from "animejs"
+
+  anime({
+    targets: ball,
+    loop: true,
+    direction: "alternate",
+
+    scale: {
+      value: 2,
+      duration: 1000,
+      easing: "easeInOutSine",
+    },
+  })
+</script>

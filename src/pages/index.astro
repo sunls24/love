@@ -1,27 +1,19 @@
 ---
-import "@/styles/globals.css"
+import TypingText from "@/components/animata/text/typing-text"
+import Ball from "@/components/Ball.astro"
 import Layout from "@/layouts/Layout.astro"
-import Header from "@/components/Header.astro"
-import { ExternalLink } from "lucide-react"
-
-const className =
-  "flex items-center py-2.5 px-4 hover:underline underline-offset-4 font-medium text-sm"
+import "@/styles/globals.css"
 ---
 
 <Layout>
-  <Header />
-  <div class="mx-auto mt-6 flex w-fit rounded-md border">
-    <a href="https://astro.build" target="_blank" class={className}>
-      {Astro.generator}
-      <ExternalLink size={15} className="ml-1" />
-    </a>
-    <a
-      href="https://github.com/sunls24/astro-starter"
-      target="_blank"
-      class={className}
-    >
-      Source
-      <ExternalLink size={15} className="ml-1" />
-    </a>
-  </div>
+  <main class="mx-auto mt-60 max-w-3xl text-neutral-600">
+    <Ball />
+    <TypingText
+      className="shrink-0"
+      text="> 你收到一个信件 💌"
+      waitTime={2000}
+      delay={64}
+      client:load
+    />
+  </main>
 </Layout>
